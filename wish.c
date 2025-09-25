@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h> // For possibly future needs like fork/exec
 
 // Function prototypes
 void print_error_and_exit(const char *msg, int status_code);
@@ -22,4 +21,20 @@ int main(int argc, char *argv[]) {
     }
 
     return 0;
+}
+
+void print_error_and_exit(const char *msg, int status_code)
+{
+}
+
+void interactive_mode()
+{
+}
+
+void batch_mode(const char *filename)
+{
+}
+
+void shell_loop(FILE *input_stream)
+{
 }
