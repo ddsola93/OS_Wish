@@ -56,6 +56,18 @@ int fork_process(char *command, char *argv[])
     }
     else {
         // Parent: wait for child to finish
+        int status;
+        if (waitpit(pid, &status, 0) == -1) {
+            perror("waitpid failed");
+            return 1;
+        }
+        // Return child exit status
+        if (WIFEXITED(status)) {
+            return WEXITSTATUS(status);
+        } 
+        else {
+            return 1;
+        }
     }
     
 }
