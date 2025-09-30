@@ -57,7 +57,7 @@ int fork_process(char *command, char *argv[])
     else {
         // Parent: wait for child to finish
         int status;
-        if (waitpit(pid, &status, 0) == -1) {
+        if (waitpid(pid, &status, 0) == -1) {
             perror("waitpid failed");
             return 1;
         }
